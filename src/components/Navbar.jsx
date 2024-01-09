@@ -7,6 +7,8 @@ const Navbar = () => {
       justify-between
       items-center
       w-screen
+      h-20
+      p-2
       m-5
       border-red-400
       border-2
