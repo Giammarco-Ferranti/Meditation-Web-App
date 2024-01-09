@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
-import Countdown from "react-countdown";
+import Countdown, { CountdownApi } from "react-countdown";
 
 const Timer = () => {
   const [timer, setTimer] = useState(0);
+  const countDownApi = CountdownApi;
   const [isRunning, setIsRunning] = useState(false);
+
+  const handleStartClick = () => {
+    this.countDownApi && this.countDownApi.start();
+  };
 
   useEffect(() => {
     let intervalId;
@@ -80,33 +85,39 @@ const Timer = () => {
         <option>30</option>
       </select> */}
 
-      <Countdown date={Date.now() + 5000} renderer={renderer} />
-      <input
+      <Countdown
+        autoStart={false}
+        date={Date.now() + 50000}
+        renderer={renderer}
+      />
+      {/* <input
         type="time"
         className="
         border-gray-700
          border-2
          "
         onChange={(e) => console.log(e.target.value)}
-      ></input>
-      <button id="start" onClick={startAndStop}>
-        {isRunning ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth="1.5"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
-            />
-          </svg>
-        ) : (
-          <svg
+      ></input> */}
+
+      <input type="number" onChange={(e) => setTimer(+e.target.value)} />
+
+      <button id="start" onClick={handleStartClick}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth="1.5"
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
+          />
+        </svg>
+
+        {/* <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -119,8 +130,7 @@ const Timer = () => {
               strokeLinejoin="round"
               d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
             />
-          </svg>
-        )}
+          </svg> */}
       </button>
       <button onClick={reset}>Reset</button>
     </div>
