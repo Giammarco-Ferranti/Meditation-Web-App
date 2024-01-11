@@ -1,46 +1,12 @@
 import React, { useState } from "react";
+import { minutesToMilliseconds, secondsToMilliseconds } from "date-fns";
 
-const ModalTimer = ({ minutes, seconds, open, closeModal }) => {
-  const values = [];
-
-  for (var i = 1; i <= 59; i++) {
-    values.push(i);
-  }
-
-  console.log(values);
-  const [minutesValue, setMinutesValue] = useState(null);
-  const [secondsValue, setSecondsValue] = useState(null);
-  // console.log(+value);
-  minutes(+minutesValue);
-  seconds(+secondsValue);
-
+const ModalTimer = ({ open, closeModal }) => {
   if (!open) return null;
   return (
     <div>
-      {values.map((n) => {
-        return (
-          <button
-            onClick={(e) => {
-              setMinutesValue(e.currentTarget.innerHTML);
-              closeModal();
-            }}
-          >
-            {n}
-          </button>
-        );
-      })}
-      {values.map((n) => {
-        return (
-          <button
-            onClick={(e) => {
-              setSecondsValue(e.currentTarget.innerHTML);
-              closeModal();
-            }}
-          >
-            {n}
-          </button>
-        );
-      })}
+      <input type="number" className="w-8"></input>
+      <h1 onClick={closeModal}>x</h1>
     </div>
   );
 };

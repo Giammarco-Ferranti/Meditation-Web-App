@@ -2,10 +2,30 @@ import React, { useEffect, useState } from "react";
 import ModalTimer from "./ModalTimer";
 
 const Timer = () => {
-  const [minutes, setMinutes] = useState(0);
-  const [seconds, setSeconds] = useState(0);
+  const [time, setTime] = useState(10);
   const [openModal, setOpenModal] = useState(false);
-  console.log(minutes);
+  const [isActive, setIsActive] = useState(false);
+
+  const startTimer = () => {
+    setIsActive(true);
+  };
+
+  const stopTimer = () => {
+    setIsActive(false);
+  };
+
+  useEffect(() => {
+    let interval = null;
+
+    if (isActive) {
+      interval = setInterval(() => {
+        time > 0 && setTime(time - 1);
+      }, 1000);
+    } else {
+      clearInterval(interval);
+    }
+    return () => clearInterval(interval);
+  }, [time, isActive]);
   return (
     <div
       className="
@@ -28,34 +48,16 @@ const Timer = () => {
       2xl:max-w-screen-2xl
     "
     >
-      <ModalTimer
-        minutes={(value) => setMinutes(value)}
-        seconds={(value) => setSeconds(value)}
-        open={openModal}
-        closeModal={() => setOpenModal(false)}
-      />
-      <button>
-        <span onClick={() => setOpenModal(true)}>{minutes}</span>:
-        <span onClick={() => setOpenModal(true)}>{seconds}</span>
+      <h1>{time}</h1>
+      <ModalTimer open={openModal} closeModal={() => setOpenModal(false)} />
+      <button onClick={() => setOpenModal(true)}>
+        <span>+</span>
       </button>
 
       <button id="start">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="w-6 h-6"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
-          />
-        </svg>
-
-        {/* <svg
+        {!isActive ? (
+          <svg
+            onClick={startTimer}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -68,9 +70,33 @@ const Timer = () => {
               strokeLinejoin="round"
               d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z"
             />
-          </svg> */}
+          </svg>
+        ) : (
+          <svg
+            onClick={stopTimer}
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5.25 7.5A2.25 2.25 0 0 1 7.5 5.25h9a2.25 2.25 0 0 1 2.25 2.25v9a2.25 2.25 0 0 1-2.25 2.25h-9a2.25 2.25 0 0 1-2.25-2.25v-9Z"
+            />
+          </svg>
+        )}
       </button>
-      <button>Reset</button>
+      <button
+        onClick={() => {
+          setTime(10);
+          setIsActive(false);
+        }}
+      >
+        Reset
+      </button>
     </div>
   );
 };
