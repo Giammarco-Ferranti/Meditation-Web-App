@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ModalTimer from "./ModalTimer";
+import { useSelector } from "react-redux";
 
 const Timer = () => {
   const [time, setTime] = useState(0);
@@ -22,11 +23,14 @@ const Timer = () => {
     if (isActive) {
       interval = setInterval(() => {
         time > 0 && setTime(time - 1000);
+        if (time == 0) return setIsActive(false);
       }, 1000);
     } else {
       clearInterval(interval);
     }
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [time, isActive]);
   return (
     <div
@@ -53,9 +57,11 @@ const Timer = () => {
       <h1>
         <span>{minutes}</span>:<span>{seconds}</span>
       </h1>
+
       <ModalTimer
         time={(n) => setTime(n)}
         open={openModal}
+        active={() => setIsActive(true)}
         closeModal={() => setOpenModal(false)}
       />
       <button onClick={() => setOpenModal(true)}>
@@ -99,6 +105,7 @@ const Timer = () => {
       </button>
       <button
         onClick={() => {
+          setOpenModal(true);
           setTime(0);
           setIsActive(false);
         }}
