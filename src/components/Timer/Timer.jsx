@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import ModalTimer from "./ModalTimer";
 
 const Timer = () => {
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(0);
   const [openModal, setOpenModal] = useState(false);
   const [isActive, setIsActive] = useState(false);
+  const minutes = new Date(time).getMinutes();
+  const seconds = new Date(time).getSeconds();
 
   const startTimer = () => {
     setIsActive(true);
@@ -19,7 +21,7 @@ const Timer = () => {
 
     if (isActive) {
       interval = setInterval(() => {
-        time > 0 && setTime(time - 1);
+        time > 0 && setTime(time - 1000);
       }, 1000);
     } else {
       clearInterval(interval);
@@ -48,8 +50,14 @@ const Timer = () => {
       2xl:max-w-screen-2xl
     "
     >
-      <h1>{time}</h1>
-      <ModalTimer open={openModal} closeModal={() => setOpenModal(false)} />
+      <h1>
+        <span>{minutes}</span>:<span>{seconds}</span>
+      </h1>
+      <ModalTimer
+        time={(n) => setTime(n)}
+        open={openModal}
+        closeModal={() => setOpenModal(false)}
+      />
       <button onClick={() => setOpenModal(true)}>
         <span>+</span>
       </button>
@@ -91,7 +99,7 @@ const Timer = () => {
       </button>
       <button
         onClick={() => {
-          setTime(10);
+          setTime(0);
           setIsActive(false);
         }}
       >
