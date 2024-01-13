@@ -1,15 +1,18 @@
 import { minutesToMilliseconds } from "date-fns";
-import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { increment, active, openModal } from "../../redux/slicer/countDown";
 
-const ModalTimer = ({ time, open, closeModal, active }) => {
-  if (!open) return null;
+const ModalTimer = () => {
+  const reduxModal = useSelector((state) => state.countDown.modalOpen);
+  const dispatch = useDispatch();
+  if (!reduxModal) return null;
 
   const handleSubmit = (e) => {
     const timeTarget = minutesToMilliseconds(+e.target[0].value);
-    time(timeTarget);
+    dispatch(increment(timeTarget));
     e.preventDefault();
-    closeModal();
-    active();
+    dispatch(openModal(false));
+    dispatch(active(true));
   };
 
   return (

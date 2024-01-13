@@ -1,29 +1,28 @@
 import React, { useEffect, useState } from "react";
 import ModalTimer from "./ModalTimer";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  active,
+  decrement,
+  increment,
+  openModal,
+} from "../../redux/slicer/countDown";
 
 const Timer = () => {
-  const [time, setTime] = useState(0);
-  const [openModal, setOpenModal] = useState(false);
-  const [isActive, setIsActive] = useState(false);
-  const minutes = new Date(time).getMinutes();
-  const seconds = new Date(time).getSeconds();
-
-  const startTimer = () => {
-    setIsActive(true);
-  };
-
-  const stopTimer = () => {
-    setIsActive(false);
-  };
+  const reduxFilter = useSelector((state) => state.countDown.value);
+  const reduxActive = useSelector((state) => state.countDown.isActive);
+  const reduxModal = useSelector((state) => state.countDown.modalOpen);
+  const dispatch = useDispatch();
+  const minutes = new Date(reduxFilter).getMinutes();
+  const seconds = new Date(reduxFilter).getSeconds();
 
   useEffect(() => {
     let interval = null;
 
-    if (isActive) {
+    if (reduxActive) {
       interval = setInterval(() => {
-        time > 0 && setTime(time - 1000);
-        if (time == 0) return setIsActive(false);
+        reduxFilter > 0 && dispatch(decrement(reduxFilter));
+        if (reduxFilter == 0) return dispatch(active(false));
       }, 1000);
     } else {
       clearInterval(interval);
@@ -31,7 +30,7 @@ const Timer = () => {
     return () => {
       clearInterval(interval);
     };
-  }, [time, isActive]);
+  }, [reduxFilter, reduxActive]);
   return (
     <div
       className="
@@ -59,19 +58,18 @@ const Timer = () => {
       </h1>
 
       <ModalTimer
-        time={(n) => setTime(n)}
-        open={openModal}
-        active={() => setIsActive(true)}
-        closeModal={() => setOpenModal(false)}
+      // time={(n) => setTime(n)}
+      // open={openModal}
+      // closeModal={() => setOpenModal(false)}
       />
-      <button onClick={() => setOpenModal(true)}>
+      <button onClick={() => dispatch(openModal(true))}>
         <span>+</span>
       </button>
 
       <button id="start">
-        {!isActive ? (
+        {!reduxActive ? (
           <svg
-            onClick={startTimer}
+            onClick={() => dispatch(active(true))}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -87,7 +85,7 @@ const Timer = () => {
           </svg>
         ) : (
           <svg
-            onClick={stopTimer}
+            onClick={() => dispatch(active(false))}
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -105,9 +103,9 @@ const Timer = () => {
       </button>
       <button
         onClick={() => {
-          setOpenModal(true);
-          setTime(0);
-          setIsActive(false);
+          dispatch(openModal(true));
+          dispatch(increment(0));
+          dispatch(active(false));
         }}
       >
         Reset

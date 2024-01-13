@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { countDownSliceReducer } from "./countDown";
+import countDownSliceReducer from "./slicer/countDown";
 
 export const store = configureStore({
   reducer: {
-    counter: countDownSliceReducer,
+    countDown: countDownSliceReducer,
   },
 });
