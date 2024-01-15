@@ -1,6 +1,6 @@
 import { minutesToMilliseconds } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
-import { increment, active, openModal } from "../../redux/slicer/countDown";
+import { increment, active, openModal } from "../../../store/slicer/countDown";
 
 const ModalTimer = () => {
   const reduxModal = useSelector((state) => state.countDown.modalOpen);

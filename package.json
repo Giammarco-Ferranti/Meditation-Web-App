@@ -12,6 +12,7 @@
   "dependencies": {
     "@reduxjs/toolkit": "^2.0.1",
     "date-fns": "^3.2.0",
+    "json-server": "^1.0.0-alpha.21",
     "react": "^18.2.0",
     "react-countdown": "^2.3.5",
     "react-dom": "^18.2.0",
