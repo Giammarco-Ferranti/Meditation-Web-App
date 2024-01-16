@@ -1,7 +1,14 @@
 {
   "posts": [
-    { "id": "1", "title": "a title" },
-    { "id": "2", "title": "another title" }
+    { "id": "1", "title": "Windy", "description": "Windy sounds" },
+    { "id": "2", "title": "Ocean", "description": "Ocean sounds" },
+    { "id": "3", "title": "Rain", "description": "Rain sounds" },
+    { "id": "4", "title": "Forest", "description": "Forest sounds" },
+    { "id": "5", "title": "City", "description": "City sounds" },
+    { "id": "6", "title": "Savana", "description": "Savana sounds" },
+    { "id": "7", "title": "Alps", "description": "Alps sounds" },
+    { "id": "8", "title": "Orcas", "description": "Orcas sounds" },
+    { "id": "9", "title": "Fire", "description": "Fire sounds" }
   ],
   "comments": [
     { "id": "1", "text": "a comment about post 1", "postId": "1" },

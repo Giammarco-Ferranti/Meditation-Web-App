@@ -1,6 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { active, decrement } from "../../../store/slicer/countDown";
+import {
+  active,
+  decrement,
+  openModal,
+} from "src/Services/store/slicer/countDown";
 
 const Countdown = () => {
   const reduxFilter = useSelector((state) => state.countDown.value);
@@ -26,8 +30,9 @@ const Countdown = () => {
   }, [reduxFilter, reduxActive]);
   return (
     <div>
-      <h1>
-        <span>{minutes}</span>:<span>{seconds}</span>
+      <h1 onClick={() => dispatch(openModal(true))} className="text-4xl ">
+        <span>{(minutes < 10 ? "0" : 0) + minutes}</span>:
+        <span>{(seconds < 10 ? "0" : 0) + seconds}</span>
       </h1>
     </div>
   );

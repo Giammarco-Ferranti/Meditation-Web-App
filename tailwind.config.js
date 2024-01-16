@@ -10,6 +10,7 @@ export default {
         "text-light": "#D9D9D9",
       },
       screens: {
+        xxs: "300px",
         xs: "475px",
       },
     },

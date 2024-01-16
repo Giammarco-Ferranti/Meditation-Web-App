@@ -1,17 +1,17 @@
-import Blog from "components/Blog";
-import Cards from "components/Cards";
-import Footer from "components/Footer";
-import Navbar from "components/Navbar";
-import Timer from "components/Timer/Timer";
+import { Blog, Cards, Footer, Navbar, Timer } from "src/Layouts";
+import { QueryClient, QueryClientProvider } from "react-query";
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Timer />
-      <Cards />
-      <Blog />
-      <Footer />
+      <QueryClientProvider client={queryClient}>
+        <Navbar />
+        <Timer />
+        <Cards />
+        <Blog />
+        <Footer />
+      </QueryClientProvider>
     </>
   );
 }
