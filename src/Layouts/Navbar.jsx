@@ -4,14 +4,15 @@ const Navbar = () => {
   return (
     <nav
       className=" 
-      container
+      
       flex 
       flex-row
       justify-between
       items-center
       w-screen
+      max-w-screen-lg
       h-20
-      p-2
+      p-10
       m-5
       
     "
@@ -25,13 +26,15 @@ const Navbar = () => {
         Natural
       </h1>
 
-      <div className="flex flex-row">
+      <div className="flex flex-row items-center">
         <UserSvg />
 
         <p
           className="
         hidden
         md:block
+        font-medium
+        pl-2
         "
         >
           Hi, Giammarco

@@ -1,9 +1,14 @@
 import React from "react";
 import { useQuery } from "react-query";
-import getPosts from "src/Services/proxies/getPosts";
+import fetchData from "src/Services/proxies/fetchData";
+
+const DB__URL = "http://localhost:3000";
 
 const Blog = () => {
-  const { isLoading, isError, data, error } = useQuery(["comments"], getPosts);
+  const { isLoading, isError, data, error } = useQuery(
+    ["comments", DB__URL],
+    () => fetchData(`${DB__URL}/comments`)
+  );
 
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <h1>Error: {error.message}</h1>;
