@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import fetchData from "src/Services/proxies/fetchData";
+import BlogCard from "src/components/BlogCard";
 
 const DB__URL = "http://localhost:3000";
 
@@ -32,7 +33,7 @@ const Blog = () => {
         className="
       text-2xl
       font-semibold
-      mb-3
+      mb-12
       "
       >
         Posts
@@ -42,21 +43,12 @@ const Blog = () => {
         className="
       grid
       grid-cols-1
+      gap-8
+      sm:grid-cols-2
       "
       >
         {data.map((comments) => {
-          return (
-            <div key={comments.id}>
-              <div
-                className="
-           bg-slate-500
-          h-40
-          w-80
-          "
-              ></div>
-              <h1>{comments.text}</h1>
-            </div>
-          );
+          return <BlogCard key={comments.id} comments={comments} />;
         })}
       </div>
     </div>
