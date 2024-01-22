@@ -6,8 +6,9 @@ import fetchData from "src/Services/proxies/fetchData";
 const DB__URL = "http://localhost:3000";
 
 const Cards = () => {
-  const { isLoading, isError, data, error } = useQuery(["posts", DB__URL], () =>
-    fetchData(`${DB__URL}/posts`)
+  const { isLoading, isError, data, error } = useQuery(
+    ["sounds", DB__URL],
+    () => fetchData(`${DB__URL}/sounds`)
   );
 
   if (isLoading) return <h1>Loading...</h1>;
@@ -16,22 +17,27 @@ const Cards = () => {
   return (
     <main
       className=" 
-      container
+      
       flex 
       flex-col
       items-center
       w-screen
+      max-w-screen-md
       h-auto
       p-2
       m-10
-      
+      px-10
     "
     >
       <div
         className="
         block
-        text-center
+        w-full
+        sm:text-center
+        xxs:text-center
+        md:text-left
         mb-12
+        
         "
       >
         <h1
@@ -55,11 +61,14 @@ const Cards = () => {
       xxs:grid-cols-1  
       md:grid-cols-3
       
+      
+      
+      
       "
       >
         {data
-          .map((todo) => {
-            return <SoundCard key={todo.id} todo={todo} />;
+          .map((sound) => {
+            return <SoundCard key={sound.id} sound={sound} />;
           })
           .slice(0, 6)}
       </div>

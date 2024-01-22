@@ -1,14 +1,14 @@
 import React from "react";
 
-const BlogCard = ({ comments }) => {
+const BlogCard = ({ posts }) => {
   return (
     <div className=" flex flex-col justify-center items-center gap-3 cursor-pointer hover:opacity-80 active:opacity-100 truncate">
-      <div className="w-64 h-36 bg-slate-300 rounded-md"></div>
+      <div className="flex items-center justify-center w-64 h-36 bg-slate-50 rounded-md">
+        <img draggable="false" src={posts.image} className="w-52" />
+      </div>
       <div className="w-64 ">
-        <h1 className="font-bold text-lg">{comments.title}</h1>
-        <h3 className="font-normal text-base text-text-medium">
-          {comments.text}
-        </h3>
+        <h1 className="font-bold text-lg">{posts.title}</h1>
+        <h3 className="font-normal text-base text-text-medium">{posts.text}</h3>
       </div>
     </div>
   );

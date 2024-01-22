@@ -1,30 +1,75 @@
 {
-  "posts": [
-    { "id": "1", "title": "Windy", "description": "Windy sounds" },
-    { "id": "2", "title": "Ocean", "description": "Ocean sounds" },
-    { "id": "3", "title": "Rain", "description": "Rain sounds" },
-    { "id": "4", "title": "Forest", "description": "Forest sounds" },
-    { "id": "5", "title": "City", "description": "City sounds" },
-    { "id": "6", "title": "Savana", "description": "Savana sounds" },
+  "sounds": [
+    {
+      "id": "1",
+      "title": "Wind",
+      "description": "Windy sounds",
+      "image": "public/images/wind.png",
+      "sounds": "../src/assets/sounds/windSound.mp3"
+    },
+    {
+      "id": "2",
+      "title": "Ocean",
+      "description": "Ocean sounds",
+      "image": "public/images/ocean.png",
+      "sounds": "../src/assets/sounds/oceanSound.mp3"
+    },
+    {
+      "id": "3",
+      "title": "Rain",
+      "description": "Rain sounds",
+      "image": "public/images/rain.png",
+      "sounds": "../src/assets/sounds/rainSound.mp3"
+    },
+    {
+      "id": "4",
+      "title": "Forest",
+      "description": "Forest sounds",
+      "image": "public/images/forest.png",
+      "sounds": "../src/assets/sounds/forestSound.mp3"
+    },
+    {
+      "id": "5",
+      "title": "City",
+      "description": "City sounds",
+      "image": "public/images/city.png",
+      "sounds": "../src/assets/sounds/citySound.mp3"
+    },
+    {
+      "id": "6",
+      "title": "Desert",
+      "description": "Desert sounds",
+      "image": "public/images/desert.png",
+      "sounds": "../src/assets/sounds/desertSound.mp3"
+    },
     { "id": "7", "title": "Alps", "description": "Alps sounds" },
     { "id": "8", "title": "Orcas", "description": "Orcas sounds" },
     { "id": "9", "title": "Fire", "description": "Fire sounds" }
   ],
-  "comments": [
+  "posts": [
     {
       "id": "1",
-      "title": "Post 1",
-      "text": "a comment about post 1",
-      "postId": "1"
+      "title": "Meditation 101",
+      "text": "Learn all about meditation.",
+      "postId": "1",
+      "image": "public/images/meditation101.png"
     },
     {
       "id": "2",
-      "title": "Post 2",
-      "text": "another comment about post 1",
-      "postId": "1"
+      "title": "30 days of Meditation",
+      "text": "Challenge yourself with this plan.",
+      "postId": "1",
+      "image": "public/images/calendar.png"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "user": [
+    {
+      "id": "1",
+      "name": "Giammarco"
+    },
+    {
+      "id": "2",
+      "name": "John"
+    }
+  ]
 }

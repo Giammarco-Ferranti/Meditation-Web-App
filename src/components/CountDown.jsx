@@ -5,6 +5,8 @@ import {
   decrement,
   openModal,
 } from "src/Services/store/slicer/countDown";
+import timerSound from "../assets/sounds/timerSound.mp3";
+import useSound from "use-sound";
 
 const Countdown = () => {
   const reduxFilter = useSelector((state) => state.countDown.value);
@@ -12,6 +14,7 @@ const Countdown = () => {
   const dispatch = useDispatch();
   const minutes = new Date(reduxFilter).getMinutes();
   const seconds = new Date(reduxFilter).getSeconds();
+  const [play, { stop }] = useSound(timerSound);
 
   useEffect(() => {
     let interval = null;

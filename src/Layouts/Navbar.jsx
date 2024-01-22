@@ -1,6 +1,17 @@
+import { useQuery } from "react-query";
+import fetchData from "src/Services/proxies/fetchData";
 import UserSvg from "src/assets/UserSvg";
 
+const DB__URL = "http://localhost:3000";
+
 const Navbar = () => {
+  const { isLoading, isError, data, error } = useQuery(["user", DB__URL], () =>
+    fetchData(`${DB__URL}/user`)
+  );
+
+  if (isLoading) return <h1>Loading...</h1>;
+  if (isError) return <h1>Error: {error.message}</h1>;
+
   return (
     <nav
       className=" 
@@ -10,7 +21,7 @@ const Navbar = () => {
       justify-between
       items-center
       w-screen
-      max-w-screen-lg
+      max-w-screen-xl
       h-20
       p-10
       m-5
@@ -37,7 +48,7 @@ const Navbar = () => {
         pl-2
         "
         >
-          Hi, Giammarco
+          Hi, {data[0].name}
         </p>
       </div>
     </nav>

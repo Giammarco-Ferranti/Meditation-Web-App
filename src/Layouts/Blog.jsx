@@ -6,9 +6,8 @@ import BlogCard from "src/components/BlogCard";
 const DB__URL = "http://localhost:3000";
 
 const Blog = () => {
-  const { isLoading, isError, data, error } = useQuery(
-    ["comments", DB__URL],
-    () => fetchData(`${DB__URL}/comments`)
+  const { isLoading, isError, data, error } = useQuery(["posts", DB__URL], () =>
+    fetchData(`${DB__URL}/posts`)
   );
 
   if (isLoading) return <h1>Loading...</h1>;
@@ -17,23 +16,29 @@ const Blog = () => {
   return (
     <div
       className="
-      container
+      
      flex 
       flex-col
       items-center
       w-screen
+      max-w-screen-md
       h-auto
-      p-2
+      px-10
       m-5
-
+    mb-20
 
     "
     >
       <h1
         className="
+        w-full
+        sm:text-center
+        xxs:text-center
+        md:text-left
       text-2xl
       font-semibold
       mb-12
+      
       "
       >
         Posts
@@ -43,12 +48,12 @@ const Blog = () => {
         className="
       grid
       grid-cols-1
-      gap-8
+      gap-10
       sm:grid-cols-2
       "
       >
-        {data.map((comments) => {
-          return <BlogCard key={comments.id} comments={comments} />;
+        {data.map((posts) => {
+          return <BlogCard key={posts.id} posts={posts} />;
         })}
       </div>
     </div>
