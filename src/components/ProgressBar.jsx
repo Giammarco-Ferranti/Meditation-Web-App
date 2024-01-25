@@ -1,22 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 
-const ProgressBar = ({ audioRef }) => {
-  // useEffect(() => {
-  //   if (audioRef) {
-  //     console.log(audioRef.current.duration());
-  //     console.log(audioRef.current.currenTime());
-  //   } else {
-  //     null;
-  //   }
-  // }, [audioRef]);
-  // if (audioRef) {
-  //   const duration = audioRef.current.duration;
-  //   console.log(duration);
+const ProgressBar = ({ timeCurrentSong }) => {
+  const clickRef = useRef();
 
-  // }
+  const checkWidth = (e) => {};
+
   return (
-    <div className="absolute bottom-0 left-2 right-2 h-0.5 bg-black rounded-full w-auto ">
-      <div className="bg-white h-0.5 rounded-full w-[20%]"></div>
+    <div
+      ref={clickRef}
+      onClick={checkWidth}
+      className="absolute bottom-0 left-2 right-2 h-0.5 bg-black rounded-full w-auto "
+    >
+      <div
+        className="bg-white h-0.5 rounded-full transition-all"
+        style={{ width: `${timeCurrentSong + "%"}` }}
+      ></div>
     </div>
   );
 };
