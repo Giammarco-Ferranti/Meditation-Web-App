@@ -53,7 +53,7 @@ const Blog = () => {
       "
       >
         {data.map((posts) => {
-          return <BlogCard key={posts.id} posts={posts} />;
+          return <BlogCard value={posts.id} key={posts.id} posts={posts} />;
         })}
       </div>
     </div>
