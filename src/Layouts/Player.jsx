@@ -2,9 +2,11 @@ import React, { useRef, useState } from "react";
 
 import { useSelector } from "react-redux";
 
-import CurrentTrack from "src/components/CurrentTrack";
-import PlayerControls from "src/components/PlayerControls";
-import ProgressBar from "src/components/ProgressBar";
+import {
+  CurrentTrack,
+  PlayerControls,
+  ProgressBar,
+} from "src/components/index";
 
 const Player = () => {
   const songPlaying = useSelector((state) => state.player.value);
@@ -20,7 +22,7 @@ const Player = () => {
     // console.log(duration, currentTime);
   };
 
-  console.log(timeCurrentSong);
+  // console.log(timeCurrentSong);
   return (
     <>
       {songPlaying && (
@@ -28,7 +30,10 @@ const Player = () => {
           <div className="relative flex flex-row justify-between items-center h-12 md:h-16 w-full max-w-screen-md mx-10 px-5 rounded-md backdrop-blur-lg backdrop-brightness-95">
             <CurrentTrack audioRef={audioRef} onPlaying={onPlaying} />
             <PlayerControls audioRef={audioRef} />
-            <ProgressBar timeCurrentSong={timeCurrentSong} />
+            <ProgressBar
+              timeCurrentSong={timeCurrentSong}
+              audioRef={audioRef}
+            />
           </div>
         </div>
       )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { useQuery } from "react-query";
 import fetchData from "src/Services/proxies/fetchData";
-import BlogCard from "src/components/BlogCard";
+import { BlogCard } from "src/components/index";
 
 const DB__URL = "http://localhost:3000";
 

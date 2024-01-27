@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 
-import SoundCard from "src/components/SoundCard";
+import { SoundCard } from "src/components/index";
 import fetchData from "src/Services/proxies/fetchData";
 
 const DB__URL = "http://localhost:3000";

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   active,
@@ -14,7 +14,7 @@ const Countdown = () => {
   const dispatch = useDispatch();
   const minutes = new Date(reduxFilter).getMinutes();
   const seconds = new Date(reduxFilter).getSeconds();
-  const [play, { stop }] = useSound(timerSound);
+  const audioRef = useRef();
 
   useEffect(() => {
     let interval = null;
@@ -22,10 +22,16 @@ const Countdown = () => {
     if (reduxActive) {
       interval = setInterval(() => {
         reduxFilter > 0 && dispatch(decrement(reduxFilter));
-        if (reduxFilter == 0) return dispatch(active(false));
       }, 1000);
+      if (reduxFilter == 0) {
+        dispatch(active(false));
+        setInterval(() => {
+          audioRef.current.play();
+        }, 3000);
+      }
     } else {
       clearInterval(interval);
+      audioRef.current.pause();
     }
     return () => {
       clearInterval(interval);
@@ -37,6 +43,7 @@ const Countdown = () => {
         <span>{(minutes < 10 ? "0" : 0) + minutes}</span>:
         <span>{(seconds < 10 ? "0" : 0) + seconds}</span>
       </h1>
+      <audio ref={audioRef} src={timerSound}></audio>
     </div>
   );
 };
