@@ -1,4 +1,5 @@
 import { useQuery } from "react-query";
+import { Link, useNavigate } from "react-router-dom";
 import fetchData from "src/Services/proxies/fetchData";
 import UserSvg from "src/assets/UserSvg";
 
@@ -8,6 +9,8 @@ const Navbar = () => {
   const { isLoading, isError, data, error } = useQuery(["user", DB__URL], () =>
     fetchData(`${DB__URL}/user`)
   );
+
+  const navigate = useNavigate();
 
   if (isLoading) return <h1>Loading...</h1>;
   if (isError) return <h1>Error: {error.message}</h1>;
@@ -25,10 +28,11 @@ const Navbar = () => {
       h-20
       p-10
       m-5
-      
+      cursor-pointer
     "
     >
       <h1
+        onClick={() => navigate("/")}
         className="
         text-2xl
         font-semibold
@@ -37,7 +41,10 @@ const Navbar = () => {
         Natural
       </h1>
 
-      <div className="flex flex-row items-center">
+      <div
+        onClick={() => navigate("/user")}
+        className="flex flex-row items-center"
+      >
         <UserSvg />
 
         <p

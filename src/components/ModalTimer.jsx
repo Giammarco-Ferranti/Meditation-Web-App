@@ -20,9 +20,9 @@ const ModalTimer = () => {
   };
 
   return (
-    <div>
+    <div className="absolute flex flex-col w-72 h-72  items-center justify-center">
       <form onSubmit={handleSubmit}>
-        <input type="number" className="w-8"></input>
+        <input type="number" className="w-8 h-8"></input>
         <button type="submit">Start</button>
       </form>
     </div>
