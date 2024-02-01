@@ -15,7 +15,12 @@ const BlogCard = ({ posts }) => {
       className=" flex flex-col justify-center items-center gap-3 cursor-pointer hover:opacity-80 active:opacity-100 truncate"
     >
       <div className="flex items-center justify-center w-64 h-36 bg-slate-50 rounded-md">
-        <img draggable="false" src={posts.image} className="w-52" />
+        <img
+          data-testid="blogImage"
+          draggable="false"
+          src={posts.image}
+          className="w-52"
+        />
       </div>
       <div className="w-64 ">
         <h1 className="font-bold text-lg">{posts.title}</h1>

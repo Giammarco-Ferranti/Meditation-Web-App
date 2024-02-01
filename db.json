@@ -4,42 +4,42 @@
       "id": "1",
       "title": "Wind",
       "description": "Windy sounds",
-      "image": "public/images/wind.png",
+      "image": "images/wind.png",
       "sounds": "../src/assets/sounds/windSound.mp3"
     },
     {
       "id": "2",
       "title": "Ocean",
       "description": "Ocean sounds",
-      "image": "public/images/ocean.png",
+      "image": "images/ocean.png",
       "sounds": "../src/assets/sounds/oceanSound.mp3"
     },
     {
       "id": "3",
       "title": "Rain",
       "description": "Rain sounds",
-      "image": "public/images/rain.png",
+      "image": "images/rain.png",
       "sounds": "../src/assets/sounds/rainSound.mp3"
     },
     {
       "id": "4",
       "title": "Forest",
       "description": "Forest sounds",
-      "image": "public/images/forest.png",
+      "image": "images/forest.png",
       "sounds": "../src/assets/sounds/forestSound.mp3"
     },
     {
       "id": "5",
       "title": "City",
       "description": "City sounds",
-      "image": "public/images/city.png",
+      "image": "images/city.png",
       "sounds": "../src/assets/sounds/citySound.mp3"
     },
     {
       "id": "6",
       "title": "Desert",
       "description": "Desert sounds",
-      "image": "public/images/desert.png",
+      "image": "images/desert.png",
       "sounds": "../src/assets/sounds/desertSound.mp3"
     },
     {
@@ -65,7 +65,7 @@
       "text": "Learn all about meditation.",
       "description": "Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est.",
       "postId": "1",
-      "image": "public/images/meditation101.png"
+      "image": "images/meditation101.png"
     },
     {
       "id": "2",
@@ -73,7 +73,7 @@
       "text": "Challenge yourself with this plan.",
       "description": "Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est.",
       "postId": "1",
-      "image": "public/images/calendar.png"
+      "image": "images/calendar.png"
     }
   ]
 }
