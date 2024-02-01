@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Navbar } from "src/Layouts";
-import BlogPost from "src/components/BlogPost";
+import BlogPost from "src/components/Blog/BlogPost";
 
 const BlogPage = () => {
   return (

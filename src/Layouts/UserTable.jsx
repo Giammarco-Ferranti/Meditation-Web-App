@@ -70,18 +70,9 @@ const UserTable = () => {
   ];
 
   return (
-    <div
-      className="flex 
-      flex-col
-      items-center
-      w-screen
-      max-w-screen-md
-      h-auto
-      p-2
-      px-10"
-    >
+    <div className="flex flex-col items-center w-screen max-w-screen-md h-auto p-2 px-10">
       <div className="flex flex-col w-full">
-        <h1 className="text-2xl font-bold text-left mb-10">Hi, Giammarco</h1>
+        <h1 className="text-2xl font-bold text-left mb-10">Hi, User</h1>
         <div className="md:grid md:grid-cols-3 md:items-center md:justify-items-center mb-10">
           {userActions.map((action) => {
             return (
@@ -96,10 +87,6 @@ const UserTable = () => {
           })}
         </div>
       </div>
-
-      <button className="bg-red-500 border-red-600 border-2 p-3 rounded-xl text-white hover:opacity-90 active:opacity-100">
-        Logout
-      </button>
     </div>
   );
 };

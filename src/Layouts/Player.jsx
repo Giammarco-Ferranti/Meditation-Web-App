@@ -13,16 +13,13 @@ const Player = () => {
   const [timeCurrentSong, setTimeCurrentSong] = useState(0);
 
   const audioRef = useRef();
-  // console.log(audioRef);
 
   const onPlaying = () => {
     const duration = audioRef.current.duration;
     const currentTime = audioRef.current.currentTime;
     setTimeCurrentSong((currentTime / duration) * 100);
-    // console.log(duration, currentTime);
   };
 
-  // console.log(timeCurrentSong);
   return (
     <>
       {songPlaying && (

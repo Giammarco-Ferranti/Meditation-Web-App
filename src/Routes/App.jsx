@@ -1,8 +1,5 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import BlogPage from "src/Pages/BlogPage";
-import Dashboard from "src/Pages/Dashboard";
-import UserPage from "src/Pages/UserPage";
+import { BlogPage, Dashboard, UserPage } from "src/Pages";
 
 const App = () => {
   return (

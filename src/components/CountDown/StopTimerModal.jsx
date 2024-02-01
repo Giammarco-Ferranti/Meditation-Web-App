@@ -7,7 +7,10 @@ const StopTimerModal = ({ stopSound }) => {
   const dispatch = useDispatch();
   if (!open) return null;
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50 ">
+    <div
+      style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
+      className="flex w-full max-h-full h-[calc(100%-1rem)] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 items-center justify-center "
+    >
       <button
         onClick={() => {
           stopSound.current.pause();

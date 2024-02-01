@@ -1,6 +1,5 @@
 import React from "react";
-import { Navbar } from "src/Layouts";
-import UserTable from "src/Layouts/UserTable";
+import { Navbar, UserTable } from "src/Layouts";
 
 const UserPage = () => {
   return (

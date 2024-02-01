@@ -42,9 +42,21 @@
       "image": "public/images/desert.png",
       "sounds": "../src/assets/sounds/desertSound.mp3"
     },
-    { "id": "7", "title": "Alps", "description": "Alps sounds" },
-    { "id": "8", "title": "Orcas", "description": "Orcas sounds" },
-    { "id": "9", "title": "Fire", "description": "Fire sounds" }
+    {
+      "id": "7",
+      "title": "Alps",
+      "description": "Alps sounds"
+    },
+    {
+      "id": "8",
+      "title": "Orcas",
+      "description": "Orcas sounds"
+    },
+    {
+      "id": "9",
+      "title": "Fire",
+      "description": "Fire sounds"
+    }
   ],
   "posts": [
     {
@@ -62,16 +74,6 @@
       "description": "Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est.",
       "postId": "1",
       "image": "public/images/calendar.png"
-    }
-  ],
-  "user": [
-    {
-      "id": "1",
-      "name": "Giammarco"
-    },
-    {
-      "id": "2",
-      "name": "John"
     }
   ]
 }
