@@ -45,7 +45,7 @@ const ModalTimer = () => {
               required
               className="peer bg-slate-200 rounded-md w-32 h-10 border-none text-center font-bold placeholder:text-text-medium placeholder:text-base [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none invalid:[&:not(:placeholder-shown):not(:focus)]:border-red-500"
             ></input>
-            <span class="mt-2 p-2 hidden text-sm max-w-44 bg-red-100 rounded-md text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
+            <span className="mt-2 p-2 hidden text-sm max-w-44 bg-red-100 rounded-md text-red-500 peer-[&:not(:placeholder-shown):not(:focus):invalid]:block">
               Please enter a number between 1 and 60
             </span>
           </label>

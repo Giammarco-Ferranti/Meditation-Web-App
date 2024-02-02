@@ -3,11 +3,10 @@ import { useQuery } from "react-query";
 import fetchData from "src/Services/proxies/fetchData";
 import { BlogCard, MessageError, Spinner } from "src/components/index";
 
-const DB__URL = "http://localhost:3000";
-
 const Blog = () => {
-  const { isLoading, isError, data } = useQuery(["posts", DB__URL], () =>
-    fetchData(`${DB__URL}/posts`)
+  const { isLoading, isError, data } = useQuery(
+    ["posts", import.meta.env.VITE_DB__URL],
+    () => fetchData(`${import.meta.env.VITE_DB__URL}/posts`)
   );
 
   if (isLoading) return <Spinner />;

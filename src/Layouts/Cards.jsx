@@ -4,12 +4,10 @@ import { MessageError, SoundCard, Spinner } from "src/components/index";
 
 import fetchData from "src/Services/proxies/fetchData";
 
-const DB__URL = "http://localhost:3000";
-
 const Cards = () => {
   const { isLoading, isError, data, error } = useQuery(
-    ["sounds", DB__URL],
-    () => fetchData(`${DB__URL}/sounds`)
+    ["sounds", import.meta.env.VITE_DB__URL],
+    () => fetchData(`${import.meta.env.VITE_DB__URL}/sounds`)
   );
 
   if (isLoading) return <Spinner />;

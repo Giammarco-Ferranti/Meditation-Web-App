@@ -23,8 +23,15 @@ const BlogCard = ({ posts }) => {
         />
       </div>
       <div className="w-64 ">
-        <h1 className="font-bold text-lg">{posts.title}</h1>
-        <h3 className="font-normal text-base text-text-medium">{posts.text}</h3>
+        <h1 data-testid="blogTitle" className="font-bold text-lg">
+          {posts.title}
+        </h1>
+        <h3
+          data-testid="blogText"
+          className="font-normal text-base text-text-medium"
+        >
+          {posts.text}
+        </h3>
       </div>
     </div>
   );

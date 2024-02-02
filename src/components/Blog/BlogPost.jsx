@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 
 const BlogPost = () => {
   const blog = useSelector((state) => state.blog.value);
-  console.log(blog);
   if (!blog) return null;
   return (
     <div
@@ -17,7 +16,7 @@ const BlogPost = () => {
       px-10"
     >
       <div className=" w-60">
-        <img src={blog.image} alt="Blog Image" />
+        <img data-testid="blogImage" src={blog.image} alt="Blog Image" />
       </div>
       <div className="flex flex-col gap-3 mt-10">
         <h1 className="text-2xl font-bold text-left">{blog.title}</h1>
