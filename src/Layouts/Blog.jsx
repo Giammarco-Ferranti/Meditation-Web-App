@@ -1,16 +1,26 @@
-import React from "react";
-import { useQuery } from "react-query";
-import fetchData from "src/Services/proxies/fetchData";
-import { BlogCard, MessageError, Spinner } from "src/components/index";
+import { BlogCard } from "src/components/index";
 
 const Blog = () => {
-  const { isLoading, isError, data } = useQuery(
-    ["posts", import.meta.env.VITE_DB__URL],
-    () => fetchData(`${import.meta.env.VITE_DB__URL}/posts`)
-  );
-
-  if (isLoading) return <Spinner />;
-  if (isError) return <MessageError />;
+  const blog = [
+    {
+      id: "1",
+      title: "Meditation 101",
+      text: "Learn all about meditation.",
+      description:
+        "Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est.",
+      postId: "1",
+      image: "../src/assets/images/meditation101.png",
+    },
+    {
+      id: "2",
+      title: "30 days of Meditation",
+      text: "Challenge yourself with this plan.",
+      description:
+        "Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est. Minim non consectetur ipsum aute qui laborum magna anim id. Consequat et tempor voluptate proident. Ad veniam culpa minim ea aliqua cillum nulla velit magna esse. Magna consequat veniam proident anim laboris tempor aliquip est.",
+      postId: "1",
+      image: "../src/assets/images/calendar.png",
+    },
+  ];
 
   return (
     <div className="flex flex-col items-center w-screen max-w-screen-md h-auto px-10 m-5 mb-20 ">
@@ -19,7 +29,7 @@ const Blog = () => {
       </h1>
 
       <div className="grid grid-cols-1 gap-10 sm:grid-cols-2">
-        {data.map((posts) => {
+        {blog.map((posts) => {
           return <BlogCard value={posts.id} key={posts.id} posts={posts} />;
         })}
       </div>

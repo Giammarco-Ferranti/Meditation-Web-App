@@ -8,5 +8,3 @@ export { default as ProgressBar } from "./SongPlayer/ProgressBar";
 export { default as SoundCard } from "./SoundCard";
 export { default as BlogPost } from "./Blog/BlogPost";
 export { default as StopTimerModal } from "./CountDown/StopTimerModal";
-export { default as MessageError } from "./MessageError";
-export { default as Spinner } from "./Spinner";
