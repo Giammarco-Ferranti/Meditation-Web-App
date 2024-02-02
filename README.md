@@ -22,3 +22,4 @@ Technologies used in the project:
 - Vite
 - Redux-Toolkit
 - React Router
+- Tailwind
