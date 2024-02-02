@@ -6,7 +6,7 @@ import {
   openModal,
   openSoundModal,
 } from "src/Services/store/slicer/countDown";
-import timerSound from "src/assets/sounds/timerSound.mp3";
+
 import StopTimerModal from "./StopTimerModal";
 
 const Countdown = () => {
@@ -42,7 +42,7 @@ const Countdown = () => {
         <span>{(minutes < 10 ? "0" : 0) + minutes}</span>:
         <span>{(seconds < 10 ? "0" : 0) + seconds}</span>
       </h1>
-      <audio ref={audioRef} src={timerSound}></audio>
+      <audio ref={audioRef} src={"sounds/timerSound.mp3"}></audio>
       <StopTimerModal stopSound={audioRef} />
     </div>
   );
